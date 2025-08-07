@@ -1,6 +1,5 @@
 <div align="center">
 
-<img src="https://i.imgur.com/XSgpcs0.gif" width="200" alt="NosXLAB Logo"/>
 
 ### [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=3F97F7&center=true&vCenter=true&multiline=true&random=true&width=435&lines=Welcome+To+NosXTeam%F0%9F%94%AC)](https://git.io/typing-svg)
 
