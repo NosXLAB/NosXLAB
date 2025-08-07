@@ -2,7 +2,7 @@
 
 <img src="https://i.imgur.com/XSgpcs0.gif" width="200" alt="NosXLAB Logo"/>
 
-### [![Typing SVG](https://readme-typing-svg.herokuapp.com/?font=JetBrains+Mono\&weight=700\&size=32\&duration=4000\&pause=1000\&color=00FFC6\&center=true\&vCenter=true\&width=600\&lines=Chào+mừng+đến+với+NosXLAB+Team!+🔬✨)](https://git.io/typing-svg)
+### [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=3F97F7&center=true&vCenter=true&multiline=true&random=true&width=435&lines=Welcome+To+NosXTeam%F0%9F%94%AC)](https://git.io/typing-svg)
 
 </div>
 
@@ -10,7 +10,7 @@
 
 ## 🔬 Giới thiệu
 
-**NosXLAB Team** là một tổ chức chuyên về **nghiên cứu – phát triển phần mềm** cho mọi thiết bị, đặc biệt tập trung vào:
+**NosXTeam** là một tổ chức chuyên về **nghiên cứu – phát triển phần mềm** cho mọi thiết bị, đặc biệt tập trung vào:
 
 * Hiệu suất tối ưu cho phần cứng phổ thông.
 * Giải pháp đơn giản nhưng hiệu quả cao.
@@ -47,14 +47,14 @@ Chúng tôi luôn **mở cửa hợp tác** với những cá nhân, nhóm phát
 * ⚙️ Một đội ngũ sẵn sàng xây những thứ "ít ai nghĩ tới".
 * 🤝 Một đối tác tôn trọng giá trị cốt lõi.
 
-👉 **NosXLAB Team** là điểm đến.
+👉 **NosXTeam** là điểm đến.
 
 ---
 
 ## 📬 Liên hệ
 
-* 🐙 **GitHub (Tổ chức):** [NosXLAB](https://github.com/NosXLAB)
-* 🧑‍💻 **GitHub (Cá nhân):** [NosXLAB-GIT](https://github.com/NosXLAB-GIT)
+* 🐙 **GitHub:** [NosXTeam](https://github.com/NosXLAB)
+* 🧑‍💻 **GitHub:** [NosXLAB-GIT](https://github.com/NosXLAB-GIT)
 * 📧 **Email:** [nhb0985@gmail.com](mailto:nhb0985@gmail.com)
 * 🌐 **Facebook:** [facebook.com/hbachismee](https://facebook.com/hbachismee)
 
