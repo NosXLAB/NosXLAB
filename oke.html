@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💌 Thơ Tình Code - Nguyễn Huy Bách Style 💌</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+        body {
+            background-color: #000000; /* Nền đen như console */
+            color: #ffffff;
+            font-family: 'Roboto Mono', monospace; /* Font đơn giản, hợp với coding style */
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .text-container {
+            /* Màu 13 (Magenta/Light Purple) trên console */
+            color: #ff00ff; 
+            white-space: nowrap; /* Giữ văn bản trên một dòng */
+            overflow: hidden;    /* Ẩn phần chưa được "đánh máy" */
+            border-right: 0.15em solid #ff00ff; /* Hiệu ứng con trỏ nhấp nháy */
+            width: 0; /* Bắt đầu với width 0 */
+            margin-bottom: 5px; /* Khoảng cách giữa các dòng */
+            padding-right: 5px; /* Để con trỏ không dính chữ */
+            font-size: 18px;
+        }
+
+        /* Dùng data-text để truyền văn bản vào CSS */
+        .line {
+            display: block;
+            margin: 0;
+            opacity: 0; /* Ẩn ban đầu */
+            animation: 
+                typing 3s steps(60, end) forwards, /* Hiệu ứng đánh máy */
+                blink-caret 0.75s step-end infinite; /* Hiệu ứng con trỏ */
+        }
+
+        /* Hiệu ứng con trỏ chỉ áp dụng cho dòng cuối cùng đang được đánh máy */
+        .line:not(.active) {
+            border-right: none;
+        }
+
+        /* Định nghĩa hiệu ứng đánh máy */
+        /* steps(60, end) = 60 bước nhảy (tương đương 60 ký tự), end = kết thúc ngay ký tự cuối cùng */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        /* Hiệu ứng nhấp nháy con trỏ */
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #ff00ff; }
+        }
+    </style>
+</head>
+<body>
+    <div id="typewriter-output">
+        </div>
+
+    <script>
+        const texts = [
+            "Bau troi dem khong may, khong sao",
+            "Trang treo tren cao khi long anh van nho nhung em nhieu",
+            "Anh lam sao co the ngung suy nghi den doi moi em, du chi mot giay",
+            "Mac cho ta di ben nhau bao lau",
+            "Em dau hay anh can bao cau noi anh yeu em",
+            "Chi de em se mot lan nhin thay trai tim anh dang rung dong biet bao",
+            "Du loi noi co la gio bay",
+            "Anh van mong sau nay chung ta tro thanh cua nhau",
+            "Met thi cu ngoai lai phia sau anh van luon day ma",
+            "Du thoi gian khong chiu dung yen",
+            "De cho chinh anh khong con ngan ngo cung thoi mo mong",
+            "Thi anh van luon danh nhung cau ca trong long anh cho nguoi mai thoi",
+            
+            // Đoạn 2
+            "", // Dòng trống ngăn cách
+            "Du cho mai ve sau",
+            "Minh khong ben canh nhau",
+            "Lam tim anh quant dau",
+            "Anh trong ngong bao nhieu lau",
+            "Du vuong van u sau",
+            "Mua thu co phai mau",
+            "Anh van muon yeu em",
+            "Du cho muon trung phuong",
+            "Con bao nhieu loi thuong",
+            "Du menh mong dai duong",
+            "Phai di sac huong mo mang",
+            "Anh van yeu minh em thoi day",
+            "Em oi! Dung de tinh anh do dang",
+
+            // Đoạn 3
+            "", // Dòng trống ngăn cách
+            "(Oi gioi oi!)",
+            "Rat nhieu cau tra loi chi de em nho duoc dieu nay nua thoi",
+            "Anh van luon muon o canh em bat ke du cho nhieu ngay nua troi",
+            "Hoi dau gia vo ngo ngan mot minh duoi tan la cay ma ngam troi",
+            "Ai biet quen duoc may thang moi phat hien em cung kha nhay va lam loi",
+            "Em thi van dang yeu tru nhung luc do chung cau gat mang du dieu",
+            "Dang yeu tu cai dang dieu dua vao anh",
+            "Moi khi troi tat nang buoi chieu (Haizz)",
+            "Biet la lam duoc si nen kho tinh hay nhac nhan nhu nhieu",
+            "Nhu la om qua bom no cham vi anh ma yeu em thi phai chac chan du lieu",
+
+            // Đoạn 4
+            "", // Dòng trống ngăn cách
+            "Cho thoi gian dua loi",
+            "Anh khong mong dieu gi xa xoi",
+            "Yeu chi minh em thoi khien anh thuc thao cu moi dem ve",
+            "Em lai xinh nhu the",
+            "Sao ma khong lam cho anh me dam nhu trong giac mo",
+            "(Khi lang nghe tieng yeu bay lau anh mong cho)",
+            "Em nhe ngan cau hat theo dieu dan anh feel",
+            "Ta di ben canh nhau bao nhieu the nhung van luon nho em hon nhieu",
+            "Anh mong du mai nay co gian, thi minh cung dung co cai loi nhau",
+            "Khi nguoi anh thuong chi luon co mot, du cho mai ve sau",
+
+            // Đoạn 5
+            "", // Dòng trống ngăn cách
+            "Du cho mai ve sau",
+            "Minh khong ben canh nhau",
+            "Lam tim anh quant dau",
+            "Anh trong ngong bao nhieu lau",
+            "Du vuong van u sau",
+            "Mua thu co phai mau",
+            "Anh van muon yeu em",
+            "Du cho muon trung phuong",
+            "Con bao nhieu loi thuong",
+            "Du menh mong dai duong",
+            "Phai di sac huong mo mang",
+            "Anh van yeu minh em thoi day",
+            
+            // Đoạn 6
+            "", // Dòng trống ngăn cách
+            "Du loi noi co la gio bay",
+            "Du ngay thang co con doi thay",
+            "Thi anh van mai muon nam doi ban tay dat theo nhung hy vong dong day",
+
+            // Đoạn kết
+            "", // Dòng trống ngăn cách
+            "Yeu em ma chang mot loi tho than",
+
+        ];
+
+        const outputDiv = document.getElementById('typewriter-output');
+        const delayMs = 50; // Delay giữa các ký tự (trong C++ là d=50)
+
+        async function typeWriteHTML() {
+            for (let i = 0; i < texts.length; i++) {
+                const text = texts[i];
+                if (text === "") {
+                    // Dòng trống thì chỉ cần thêm một <br> và pause 1 chút
+                    outputDiv.appendChild(document.createElement('br'));
+                    await new Promise(resolve => setTimeout(resolve, delayMs * 10)); // Pause nhẹ
+                    continue;
+                }
+
+                const lineDiv = document.createElement('div');
+                lineDiv.classList.add('text-container');
+                outputDiv.appendChild(lineDiv);
+                
+                // Hiệu ứng đánh máy bằng JavaScript
+                lineDiv.innerHTML = text; // Thêm nội dung vào trước để tính toán độ dài
+
+                // Áp dụng animation-duration dựa trên độ dài chuỗi * delayMs
+                const charCount = text.length;
+                const durationSeconds = (charCount * delayMs) / 1000;
+                
+                // Thêm/Xóa class 'active' để con trỏ chỉ nhấp nháy ở dòng hiện tại
+                lineDiv.classList.add('active');
+                
+                // Thiết lập animation
+                lineDiv.style.width = '0%';
+                lineDiv.style.opacity = '1';
+                lineDiv.style.animation = `typing ${durationSeconds}s steps(${charCount}, end) forwards, blink-caret 0.75s step-end infinite`;
+
+                // Đợi cho animation kết thúc + thêm một chút delay nữa (giống Sleep(delayMs) cuối dòng)
+                await new Promise(resolve => setTimeout(resolve, durationSeconds * 1000 + 500)); 
+                
+                // Xóa con trỏ sau khi dòng đã hoàn thành
+                lineDiv.classList.remove('active');
+            }
+        }
+
+        // Bắt đầu chạy
+        typeWriteHTML();
+    </script>
+</body>
+</html>
